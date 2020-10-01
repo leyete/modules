@@ -17,6 +17,7 @@ function target-latest-version() {
 
 function target-install() {
     git clone https://git.suckless.org/st source
+    ( cd source && git checkout "${TARGET[version]}" )  # checkout desired version.
     
     # (1) copy our configuration file.
     cp config.h source/config.h
